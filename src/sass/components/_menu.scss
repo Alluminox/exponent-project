@@ -1,0 +1,104 @@
+body.menu-active .menu {
+    transform: translateX(0);
+}
+
+.menu { 
+    transition: all .2s;
+    width: 100%;
+    max-width: 27.2rem;
+    height: 100%;
+
+    background-color: $white;
+    border-left: 1px solid $color-grey-light-1; 
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(27.2rem);
+    padding: 2.8rem 2.4rem;
+    overflow-y: auto;
+            
+    @media only screen and (min-width: #{$bp-medium}) {
+        max-width: 32rem;
+        padding: 3.6rem 2.4rem;
+        transform: translateX(32rem);
+    }
+
+
+    &__close {
+        position: absolute;
+
+        top: 2rem;
+        right: 2rem;
+
+        i {
+            font-size: 2.25rem;
+            color: $color-grey-light-2;
+        }
+
+
+        &:hover i {
+            color: $color-blue-light-1;
+        }
+    }
+
+
+    &__label {
+        font-size: 2.32rem;
+        margin-bottom: 2rem;
+        display: block;
+        font-weight: 600;
+        color: $color-grey-dark-1;
+        letter-spacing: -2px;
+    }
+
+
+    &__item.no-border a {
+        border-bottom: 0;
+    }
+
+    &__item {
+  
+        display: block;
+        width: 100%;
+    
+        &--submenu > a:hover {
+            color: $color-grey-dark-1;
+        }
+
+    }
+
+    &__link {
+        border-bottom: 1px solid $color-grey-light-1;
+    }
+
+    &__link:link,
+    &__link:visited {
+        font-size: 1.82rem;
+        width: 100%;
+        display: inline-block;
+        color: $color-grey-dark-1;
+        font-weight: 400;
+        letter-spacing: -1px;
+        padding: 1.5rem 0;
+    }
+
+
+    &__link:hover,
+    .submenu li a:hover {
+        color: $color-blue-light-1;
+    }
+
+    .submenu {
+
+        li {
+            padding: 0 1rem;
+        }
+
+        li a {
+            color: $color-grey-dark-2;
+            border-bottom: 1px solid $color-grey-light-1;
+        }
+
+    }
+}

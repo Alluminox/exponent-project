@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagina</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+
+    <header class="header">
+        <h1 class="brand">
+            <a href="#" class="brand__link"> 
+                Exponent
+                <i class="brand__icon material-icons">cloud_queue</i>
+            </a>
+        </h1>
+
+        <nav class="navbar navbar--header">
+            <ul class="navbar__list">
+                <li class="navbar__item navbar__item--signing"><a class="navbar__link" href="#">Sign In</a></li>
+                <li class="navbar__item navbar__item--login"><a class="navbar__link" href="#">Login</a></li>
+                <li id="menu-btn" class="navbar__item navbar__item--menu"><a class="navbar__link" href="#">Menu<i class="material-icons">menu</i></a></li>
+            </ul>
+        </nav>
+    
+
+    </header>
+
+    <section class="banner">
+        <div class="banner__content">
+            <h2 class="banner__title">
+                <span> sit amet consectetur </span>
+                <span>Lorem ipsum dolor sit.</span>
+                <span>Lorem ipsum dolor .</span>
+            </h2>
+
+            <a href="#" class="btn banner__btn">Ante ornare adpiscing</a>
+            <a href="#" class="banner__link">Sed amet magna?<span>Feugiat lorem</span></a>
+        </div>
+
+        <a href="#" class="banner__scroll">
+            <i class="material-icons">
+                keyboard_arrow_down
+                </i>
+        </a>
+
+    </section>
+
+
+
+    <aside class="menu">
+
+        <a href="#" id="close-menu" class="menu__close"><i class="material-icons">clear</i></a>
+        <h3 class="menu__label">Menu</h3>
+
+        <ul class="menu__list">
+            <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+            <li class="menu__item menu__item--submenu">
+                <a class="menu__link" href="#">Layouts</a>
+                <ul class="submenu">
+                    <li class="menu__item" ><a class="menu__link" href="#">Left Sidebar</a></li>
+                    <li class="menu__item" ><a class="menu__link" href="#">Right Sidebar</a></li>
+                    <li class="menu__item" ><a class="menu__link" href="#">No Sidebar</a></li>
+                    <li class="menu__item" ><a class="menu__link" href="#">Contact</a></li>
+                </ul>
+            
+            </li>
+            <li class="menu__item"><a class="menu__link" href="#">Elements</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Sign Up</a></li>
+            <li class="menu__item no-border"><a class="menu__link" href="#">Login</a></li>
+        </ul>
+
+
+    </aside>
+    
+    
+    <main class="main container">
+       
+        <div class="major">
+            <span class="major__icon">
+                <i class="material-icons-outlined">emoji_events</i>
+            </span>
+    
+            <h2 class="heading-2">Adipiscing lacus accumsan odio massa.</h2>
+    
+            <p class="major__text">Arcu porttitor ut massa adipiscing nascetur varius lorem ipsum ante ac vestibulum lacinia ante praesent. Iaculis porttitor turpis orci arcu et orci. Lobortis non commodo ante lorem ipsum ante ac vestibulum lacinia ante praesent. Iaculis porttitor turpis orci. Arcu porttitor massa.</p>
+        </div>
+
+    </main>
+
+
+
+    
+        <img src="images/flaticons/archive-1.svg" class="icon">
+    
+
+
+
+
+
+
+
+    <script>
+        
+
+        menu();
+
+
+
+
+        function toggleMenu() {
+            const body = document.querySelector("body")
+            body.classList.toggle('menu-active');
+        }
+
+        function closeMenu() {
+            const body = document.querySelector("body")
+            body.classList.remove('menu-active');
+        }
+
+    
+
+
+    function menu() {
+        document.querySelector("#menu-btn").addEventListener('click', () => {
+            event.preventDefault();
+            event.stopPropagation();
+ 
+
+            const body = document.querySelector("body")
+            toggleMenu();
+            body.addEventListener('click', () => {
+                closeMenu();
+            })
+
+        });
+
+
+
+        
+        document.querySelector('#close-menu').addEventListener('click', () => {
+            toggleMenu();
+        })
+
+    }
+
+        // menu('.menu')
+    </script>
+</body>
+</html>

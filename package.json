@@ -1,0 +1,35 @@
+{
+  "name": "exponent-layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel start:server watch:sass ",
+    "start:server": "lite-server -c lite-server.json",
+    "watch:sass": "node-sass src/sass/main.scss src/css/style.css -w",
+    "compile": "node-sass src/sass/main.scss src/css/compress.css ",
+    "input": "css/compress.css",
+    "output": "css/prefix.css",
+    "prefix:config": "postcss --config postcss.json",
+    "prefix": "postcss --use autoprefixer -b \"last 10 versions\" src/css/compress.css -o src/css/prefix.css",
+    "compress": "node-sass src/css/prefix.css src/css/style.min.css --output-style=compressed",
+    "build": "npm-run-all compile prefix compress"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.2.6",
+    "concat": "^1.0.3",
+    "concurrently": "^4.1.2",
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^4.1.1",
+    "postcss-extend": "^1.0.5",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.2",
+    "postcss-nested": "^4.1.2",
+    "postcss-simple-vars": "^5.0.2"
+  }
+}

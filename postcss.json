@@ -1,0 +1,17 @@
+{
+    "use": [
+        "autoprefixer",
+        "postcss-import",
+        "postcss-simple-vars",
+        "postcss-extend",
+        "postcss-nested",
+        "postcss-mixins"
+    ],
+    "input": "src/css/compress.css",
+    "output": "src/css/prefix.css",
+    "local-plugins": true,
+    "watch": false,
+    "autoprefixer": {
+        "browsers": "> 5%"
+    }
+}

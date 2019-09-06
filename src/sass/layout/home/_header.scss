@@ -1,0 +1,46 @@
+.header {
+    background-color: $white;
+    z-index: 999;
+    width: 100%;
+    height: 5.6rem;
+
+    position: static;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid $color-grey-light-1;
+}
+
+
+.brand {
+    line-height: 0;
+    margin-left: 1rem; 
+    letter-spacing: -1px;
+
+    &__link:visited,
+    &__link:link {
+        font-size: 2.2rem;
+        display: flex;
+        line-height: 0;
+        align-items: center;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        color: $color-grey-dark-1;
+        transition: all .4s ease-in-out;
+    }
+
+    &__link:active,
+    &__link:hover  {
+        color: $color-blue-light-1;
+    }
+
+    &__icon {
+        color: $color-blue-light-1;
+        order: -1;
+        font-size: 2.5rem;
+        margin-right: 1rem;
+    }
+
+}

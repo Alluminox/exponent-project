@@ -1,0 +1,52 @@
+.icon {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    object-fit: cover;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+
+
+    @media only screen and (min-width: $bp-screen) {
+        max-width: 112rem;
+    }
+    // 90%;
+
+    
+}
+
+.main {
+
+
+
+    // max-width: 980px, 7.2rem 0 4rem 0; <= mobile 
+    // max-width: 1280px, 8.8rem 0 5.6rem 0; <= medium
+    // 10.4rem 0 7.2rem 0;  <= screen
+
+
+    padding: 7.2rem 0 4rem 0;
+
+    @media only screen and (min-width: $bp-screen) {
+        padding: 8.8rem 0 5.6rem 0;
+    }
+
+    @media only screen and (min-width: $bp-large) {
+        padding: 10.4rem 0 7.2rem 0;
+    }
+
+
+}
+
+@import './../layout/home/header';
+@import './../layout/home/banner';
+@import './../layout/home/about';
+@import './../layout/home/gallery';
+@import './../layout/home/features';
+@import './../layout/home/footer';
+
+
