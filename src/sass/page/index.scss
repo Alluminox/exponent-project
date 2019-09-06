@@ -12,12 +12,13 @@
     margin: 0 auto;
 
 
+
     @media only screen and (min-width: $bp-screen) {
         max-width: 112rem;
     }
-    // 90%;
 
-    
+
+        
 }
 
 .main {
@@ -40,6 +41,16 @@
     }
 
 
+}
+
+.newsletter {
+    text-align: center;
+    border: none !important;
+    padding-top: 7.2rem!important;
+    &__paragraph {
+        font-size: 2rem!important;
+        font-weight: 500;
+    }
 }
 
 @import './../layout/home/header';

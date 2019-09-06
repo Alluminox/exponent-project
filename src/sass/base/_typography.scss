@@ -1,17 +1,37 @@
-.heading-1 {
+%heading {
+    letter-spacing: -1px;
+    width: 100%;
+    display: inline-block;
+    font-weight: bold;
+    color: $color-grey-dark-2;
+}
 
+.heading-1 {
+    text-align: center;
+    font-size: 3.92rem;
+    @extend %heading;
 }
 
 
 .heading-2 {
-    
-    letter-spacing: -1px;
-    color: $color-grey-dark-2;
     font-size: 3.87rem;
-    margin-bottom: 1.12rem;
-    width: 100%;
-    display: inline-block;
+    @extend %heading;
+
 }
 
+
+
+.heading-3 {
+    @extend %heading;
+    font-size: 3.4rem;
+
+
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 2rem; 
+    text-align: center;
+}
 
 @import './flaticon';
