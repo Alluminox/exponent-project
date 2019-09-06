@@ -5,9 +5,12 @@
   outline: none; }
 
 html {
-  font-size: 62.5%;
+  font-size: 55%;
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif; }
+  @media only screen and (min-width: 49.0625em) {
+    html {
+      font-size: 62.5%; } }
 
 a {
   text-decoration: none;
@@ -16,7 +19,7 @@ a {
 ul {
   list-style: none; }
 
-.heading-1, .heading-2, .heading-3, .heading-4 {
+.heading-1, h2.heading-2, .heading-3, .heading-4 {
   letter-spacing: -1px;
   width: 100%;
   display: inline-block;
@@ -27,8 +30,8 @@ ul {
   text-align: center;
   font-size: 3.92rem; }
 
-.heading-2 {
-  font-size: 3.87rem; }
+h2.heading-2 {
+  font-size: 3rem; }
 
 .heading-3 {
   font-size: 3.4rem; }
@@ -1784,17 +1787,20 @@ body.menu-active .menu {
 .menu {
   transition: all .4s ease-in;
   width: 100%;
-  max-width: 27.2rem;
   height: 100%;
   background-color: #fff;
   border-left: 1px solid #e2eaec;
+  transform: translateX(100%);
   position: fixed;
   top: 0;
   right: 0;
-  transform: translateX(27.2rem);
   padding: 2.8rem 2.4rem;
   overflow-y: auto;
   z-index: 99999; }
+  @media only screen and (min-width: 30em) {
+    .menu {
+      max-width: 27.2rem;
+      transform: translateX(27.2rem); } }
   @media only screen and (min-width: 49.0625em) {
     .menu {
       max-width: 32rem;
@@ -1949,6 +1955,18 @@ body.menu-active .menu {
   height: calc(100vh -  5.6rem);
   background-color: #000;
   position: relative; }
+  .banner__action-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+    @media only screen and (min-width: 49.0625em) {
+      .banner__action-mobile {
+        width: 0;
+        height: 0; } }
   .banner__action {
     position: absolute;
     top: 0;
@@ -1959,14 +1977,26 @@ body.menu-active .menu {
     z-index: 1;
     opacity: 1;
     animation: opacity 5s;
-    animation-delay: 2s; }
+    animation-delay: 2s;
+    display: none; }
+    @media only screen and (min-width: 49.0625em) {
+      .banner__action {
+        display: block; } }
   .banner__logo {
     z-index: 2;
-    top: 2rem;
-    left: 2rem;
     position: absolute;
-    width: 20rem;
-    opacity: .7; }
+    width: 10rem;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .8; }
+    @media only screen and (min-width: 49.0625em) {
+      .banner__logo {
+        width: 20rem;
+        opacity: .7;
+        transform: none;
+        left: 2.5rem;
+        display: block; } }
   .banner__content {
     width: 100%;
     position: relative;
@@ -1975,10 +2005,12 @@ body.menu-active .menu {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; }
+    z-index: 55;
+    padding: 0 2rem; }
     @media only screen and (min-width: 49.0625em) {
       .banner__content {
-        width: auto; } }
+        width: auto;
+        padding: 0; } }
   .banner__title {
     color: #fff;
     display: flex;
@@ -1987,10 +2019,13 @@ body.menu-active .menu {
     .banner__title--change {
       animation: opacity 1s;
       animation-delay: 1s; }
-    .banner__title span:nth-child(1) {
-      font-size: 4rem; }
+    .banner__title span:nth-child(1),
     .banner__title span:nth-child(2) {
-      font-size: 4rem; }
+      font-size: 3rem; }
+      @media only screen and (min-width: 49.0625em) {
+        .banner__title span:nth-child(1),
+        .banner__title span:nth-child(2) {
+          font-size: 4rem; } }
     .banner__title span:nth-child(3) {
       display: inline-block;
       margin-top: 2rem;
@@ -2035,6 +2070,7 @@ body.menu-active .menu {
     background-color: #fff;
     border-radius: 4rem 4rem 0  0;
     display: inline-block;
+    z-index: 55;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -2043,27 +2079,39 @@ body.menu-active .menu {
       font-size: 2.5rem; }
 
 .gallery {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
   .gallery__photos {
-    flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start; }
+    @media only screen and (min-width: 61.25em) {
+      .gallery__photos {
+        max-width: 70%; } }
   .gallery__info {
-    order: 2;
+    order: -1;
     width: 100%;
-    max-width: 32rem; }
+    margin-bottom: 2rem; }
+    @media only screen and (min-width: 61.25em) {
+      .gallery__info {
+        max-width: 30%;
+        margin-bottom: 0;
+        order: 2; } }
 
 .photo {
   height: 30rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
   width: 100%;
-  max-width: 37rem;
   position: relative;
-  background-color: red;
-  border-radius: .4rem; }
+  border-radius: .4rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem; }
+  @media only screen and (min-width: 30em) {
+    .photo {
+      max-width: calc(50% - 2rem); } }
+  @media only screen and (min-width: 80em) {
+    .photo {
+      max-width: calc(50% - 4rem); } }
   .photo img {
     border-radius: .4rem;
     width: 100%;
@@ -2098,8 +2146,11 @@ body.menu-active .menu {
   flex-wrap: wrap;
   padding: 2rem 0 7rem; }
   .major h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 4rem; }
+    @media only screen and (min-width: 30em) {
+      .major h2 {
+        font-size: 4rem; } }
   .major__icon {
     width: 20rem;
     height: 20rem;
@@ -2119,25 +2170,44 @@ body.menu-active .menu {
     .major__icon img path {
       background-color: #6ec7f5; }
   .major__text {
-    font-size: 2rem;
+    font-size: 1.87rem;
     line-height: 2.8rem;
     color: #697274;
     text-align: justify; }
+    @media only screen and (min-width: 30em) {
+      .major__text {
+        font-size: 2rem; } }
     @media only screen and (min-width: 61.25em) {
       .major__text {
         text-align: center; } }
 
 .features {
   display: flex;
-  align-items: flex-start; }
+  align-items: flex-start;
+  flex-wrap: wrap; }
+  .features__btn {
+    width: 100%;
+    text-align: center; }
+    @media only screen and (min-width: 49.0625em) {
+      .features__btn {
+        width: auto; } }
   .features__info {
-    padding-top: 5rem;
-    flex-basis: 50%;
-    padding-right: 5rem; }
+    width: 100%; }
+    @media only screen and (min-width: 61.25em) {
+      .features__info {
+        max-width: 30%;
+        padding-top: 5rem;
+        padding-right: 5rem; } }
   .features__container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+    margin-top: 7rem; }
+    @media only screen and (min-width: 61.25em) {
+      .features__container {
+        max-width: 70%;
+        margin-top: 0; } }
 
 .feature {
   margin: 1rem; }
@@ -2172,7 +2242,12 @@ body.menu-active .menu {
   font-weight: 600;
   border: 1px solid #e2eaec;
   margin-top: 2.5rem;
-  transition: .2s; }
+  transition: .2s;
+  width: 100%;
+  text-align: center; }
+  @media only screen and (min-width: 30em) {
+    .btn {
+      width: auto; } }
   .btn:hover {
     color: #6ec7f5;
     border-color: #6ec7f5; }
@@ -2183,9 +2258,12 @@ body.menu-active .menu {
     color: #fff;
     font-size: 2rem;
     border-radius: 5px;
-    padding: 3rem 6rem;
     opacity: .92;
-    transition: all .2s; }
+    transition: all .2s;
+    padding: 3.5rem 6rem; }
+    @media only screen and (min-width: 49.0625em) {
+      .btn--blue {
+        padding: 3rem 6rem; } }
     .btn--blue:active, .btn--blue:hover {
       color: #fff;
       opacity: 1; }
@@ -2194,18 +2272,28 @@ body.menu-active .menu {
   border-top: 1px solid #e2eaec;
   background-color: #f7f9fa;
   color: #e2eaec;
-  padding: 10.5rem 0; }
+  padding: 7rem 0 0 0; }
+  @media only screen and (min-width: 49.0625em) {
+    .footer {
+      padding: 10.5rem 0 0 0; } }
   .footer__info {
     border-bottom-color: #e2eaec;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; }
 
 .about,
 .updates,
 .contact {
   width: 100%;
-  max-width: 33.3%;
+  margin-bottom: 7rem;
   padding-left: 4rem; }
+  @media only screen and (min-width: 49.0625em) {
+    .about,
+    .updates,
+    .contact {
+      max-width: 33.3%;
+      margin-bottom: 0; } }
 
 .about p {
   margin: 3rem 0 2rem 0;
@@ -2271,9 +2359,11 @@ body.menu-active .menu {
 
 .copyright {
   text-align: center;
-  margin-top: 7rem;
   border-top: 1px solid #e2eaec;
   padding: 7.8rem 0 7rem 0; }
+  @media only screen and (min-width: 49.0625em) {
+    .copyright {
+      margin-top: 7rem; } }
   .copyright p {
     color: #c2cacc;
     font-size: 1.4rem; }

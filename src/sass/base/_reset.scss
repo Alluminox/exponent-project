@@ -6,11 +6,15 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 55%;
     box-sizing: border-box;
     // overflow: hidden;
 
     font-family: 'Source Sans Pro', sans-serif;
+
+    @media only screen and (min-width: $bp-medium) {
+        font-size: 62.5%;
+    }
 }
 
 a {

@@ -13,9 +13,12 @@
 }
 
 
-.heading-2 {
-    font-size: 3.87rem;
+h2.heading-2 {
+    font-size: 3rem;
     @extend %heading;
+
+    
+
 
 }
 

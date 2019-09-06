@@ -17,8 +17,13 @@
     padding: 2rem 0 7rem;
 
     h2 {
-        font-size: 4rem; 
+        font-size: 3rem; 
         margin-bottom: 4rem;
+
+        @media only screen and (min-width: #{$bq-small}) {
+            font-size: 4rem; 
+    
+        }
     }
 
     &__icon {
@@ -50,11 +55,16 @@
 
 
     &__text {
-        font-size: 2rem;
+        font-size: 1.87rem;
         line-height: 2.8rem;
         color: $color-grey-dark-1;
         text-align: justify;
         
+        @media only screen and (min-width: #{$bq-small}) {
+            font-size: 2rem;
+    
+        }
+
         @media only screen and (min-width: $bp-screen) {
             text-align: center;
         }
@@ -67,37 +77,59 @@
 
 .features {
     display: flex;
-align-items: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 
-    &__info {
 
-        padding-top: 5rem;
-        flex-basis: 50%;
-        padding-right: 5rem;
 
-        p {
 
+
+    &__btn {
+        width: 100%;
+        text-align: center;
+
+        @media only screen and (min-width: #{$bp-medium}) {
+            width: auto;
+    
         }
 
     }
 
 
-    &__btn  {
+    &__info {
+
       
+        width: 100%; 
+     
+
+
+  
+        @media only screen and (min-width: #{$bp-screen}) {
+            max-width: 30%;
+            padding-top: 5rem;
+            padding-right: 5rem;
+        
+    
+        }
+
+
     }
 
 
+
     &__container {
-  
-
-        // flex-grow: 1;
-
-  
+        width: 100%;      
         display: flex;
         flex-wrap: wrap;
-      
-
         justify-content: space-evenly;
+
+        margin-top: 7rem;
+        @media only screen and (min-width: #{$bp-screen}) {
+            max-width: 70%;    
+            margin-top: 0;
+        }
+  
+
     }
 }
 
@@ -154,6 +186,12 @@ align-items: flex-start;
     border: 1px solid $color-grey-light-1;
     margin-top: 2.5rem;
     transition: .2s;
+    width: 100%;
+    text-align: center;
+            
+    @media only screen and (min-width: #{$bq-small}) {
+       width: auto;
+    }
 
     &:hover {
         color: $color-blue-light-1;
@@ -168,9 +206,15 @@ align-items: flex-start;
         color:  $white;
         font-size: 2rem;
         border-radius: 5px;
-        padding: 3rem 6rem;
         opacity: .92;
         transition: all .2s;
+        
+        padding: 3.5rem 6rem;
+
+              
+        @media only screen and (min-width: #{$bp-medium}) {
+            padding: 3rem 6rem;
+        }
 
         &:active,
         &:hover {
